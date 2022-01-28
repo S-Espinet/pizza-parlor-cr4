@@ -31,3 +31,7 @@ Code: const myPizza = new Pizza(["pepperoni", "olives"], "medium")
         }
       };
 Expected Output: 16
+
+Describe: toppings()
+
+Test4: "It should return an array of toppings."
