@@ -6,10 +6,13 @@ function Pizza (toppings, size) {
 Pizza.prototype.pizzaCost = function () {
   let pizzaBaseCost = 10;
   let toppingsArray = this.toppings;
-  if (this.size === "small") {
+  if (toppingsArray.length === 0) {
+    return "Please select at least one option."
+  }
+  else if (toppingsArray.length !== 0 && this.size === "small") {
     return toppingsArray.length * 1 + pizzaBaseCost
   }
-  else if (this.size === "medium") {
+  else if (toppingsArray.length !== 0 && this.size === "medium") {
     return toppingsArray.length * 2 + pizzaBaseCost + 2;
   }
   else {
