@@ -13,3 +13,8 @@ Test3: "It should return cost of a pizza."
 Code: const myPizza = new Pizza(["pepperoni", "olives"], "medium")
       myPizza.pizzaCost();
 Expected Output: 16
+
+Test4: "It should return an error message if no toppings are selected."
+Code: const myPizza = new Pizza([], "small")
+      myPizza.pizzaCost();
+Expected Output: "Please select at least one option."
