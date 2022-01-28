@@ -9,7 +9,7 @@ Code: const myPizza = new Pizza(["pepperoni", "olives"], "small")
       Pizza.prototype.pizzaCost = function() {
       let pizzaBaseCost = 10;
       let toppingsArray = this.toppings;
-      let toppingsCost = toppingsArray.length x 1;
+      let toppingsCost = toppingsArray.length * 1;
       pizzaCost = toppingsCost + pizzaBaseCost;
       return pizzaCost;
       };
