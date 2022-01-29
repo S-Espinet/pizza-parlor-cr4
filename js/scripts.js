@@ -23,21 +23,47 @@ Pizza.prototype.pizzaCost = function () {
 
 
 $(document).ready (function() {
-    $("button#cost").click (function() {
-      console.log("Document is ready");
-      let size = $("input:radio[name=size]:checked").val();
-      console.log(size);
-      let inputtedToppingsArray = [];
-         if ($("#cheese").is(":checked")) {
-          inputtedToppingsArray.push("#cheese");
-      console.log(inputtedToppingsArray);
-        };
-       if ($("#onions").is(":checked")) {
-          inputtedToppingsArray.push("#onions");
-        };
-        let myPizza = new Pizza(inputtedToppingsArray, size);
-      console.log(myPizza)
-     myPizza.pizzaCost(myPizza);
-  console.log(myPizza);
-    })
+  $("button#cost").click (function() {
+console.log("Document is ready");
+    let size = $("input:radio[name=size]:checked").val();
+console.log(size);
+    let inputtedToppingsArray = [];
+    if ($("#cheese").is(":checked")) {
+      inputtedToppingsArray.push("cheese");
+    };
+    if ($("#onions").is(":checked")) {
+      inputtedToppingsArray.push("onions");
+    };
+    if ($("#olives").is(":checked")) {
+      inputtedToppingsArray.push("olives");
+    };
+    if ($("#sausage").is(":checked")) {
+      inputtedToppingsArray.push("sausage");
+    };
+    if ($("#bell-pepper").is(":checked")) {
+      inputtedToppingsArray.push("bell-pepper");
+    };
+    if ($("#pineapple").is(":checked")) {
+      inputtedToppingsArray.push("pineapple");
+    };
+    if ($("#pepperoni").is(":checked")) {
+      inputtedToppingsArray.push("pepperoni");
+    };
+    if ($("#canadian-bacon").is(":checked")) {
+      inputtedToppingsArray.push("canadian-bacon");
+    };
+    if ($("#tomato").is(":checked")) {
+      inputtedToppingsArray.push("tomato");
+    };
+    if ($("#mushroom").is(":checked")) {
+      inputtedToppingsArray.push("mushroom");
+    };
+    if ($("#spinach").is(":checked")) {
+      inputtedToppingsArray.push("spinach");
+    };
+    let myPizza = new Pizza(inputtedToppingsArray, size);
+console.log(myPizza)
+    myPizza.pizzaCost(myPizza);
+console.log(myPizza);
+  })
 });
