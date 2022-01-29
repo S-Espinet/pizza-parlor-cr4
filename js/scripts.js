@@ -23,16 +23,21 @@ Pizza.prototype.pizzaCost = function () {
 
 
 $(document).ready (function() {
-  let size = $("input:radio[name=size]:checked").val();
-  let toppingsArray = [];
-     if ($("#cheese").is(":checked")) {
-      toppingsArray.push("#cheese")
-    };
-   if ($("#onions").is(":checked")) {
-      toppingsArray.push("#onions")
-    };
-    let myPizza = new Pizza(toppingsArray, size);
     $("button#cost").click (function() {
+      console.log("Document is ready");
+      let size = $("input:radio[name=size]:checked").val();
+      console.log(size);
+      let inputtedToppingsArray = [];
+         if ($("#cheese").is(":checked")) {
+          inputtedToppingsArray.push("#cheese");
+      console.log(inputtedToppingsArray);
+        };
+       if ($("#onions").is(":checked")) {
+          inputtedToppingsArray.push("#onions");
+        };
+        let myPizza = new Pizza(inputtedToppingsArray, size);
+      console.log(myPizza)
      myPizza.pizzaCost(myPizza);
+  console.log(myPizza);
     })
 });
