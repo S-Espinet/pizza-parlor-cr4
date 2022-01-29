@@ -1,12 +1,12 @@
 function Pizza (toppings, size) {
   this.toppings = toppings;
   this.size = size;
+
 }
 
 Pizza.prototype.pizzaCost = function () {
   let pizzaBaseCost = 10;
-  //let toppingsArray = this.toppings;
-  let toppingsArray = []
+  const toppingsArray = this.toppings;
   if (toppingsArray.length === 0) {
     return "Please select at least one option."
   }
@@ -24,16 +24,16 @@ Pizza.prototype.pizzaCost = function () {
 
 $(document).ready (function() {
   console.log("Document is ready")
-  let myPizza = new Pizza()
-  let toppingsArray = [];
-  console.log(toppingsArray);
+  let toppingsArray = this.toppings;
   if ($("#cheese").is(":checked")) {
-  toppingsArray.push("#cheese");
-  console.log(toppingsArray);
-}
-  this.size = $("input:radio[name=size]:checked").val();
+    toppingsArray.push("#cheese")
+    console.log(toppingsArray);
+  };
+  let size = $("input:radio[name=size]:checked").val();
   $("button#cost").click (function() {
-    myPizza.pizzaCost();
+    let toppingsArray = this.toppings;
+    let myPizza = new Pizza([toppingsArray], size);
+    myPizza.pizzaCost(myPizza);
     console.log(myPizza);
   })
-})
+});
