@@ -63,8 +63,8 @@ console.log(size);
     };
     let myPizza = new Pizza(inputtedToppingsArray, size);
 console.log(myPizza)
-    let pizzaCost = myPizza.pizzaCost(myPizza);
-    $("#pizzaCost").html("$" + pizzaCost + ".00");
-    $("#pizzaCost").show("$" + pizzaCost + ".00");
+    let pizzaCost = "Your cost is: $" + myPizza.pizzaCost(myPizza) + ".00";
+    $("#pizzaCost").html(pizzaCost);
+    $("#pizzaCost").show(pizzaCost);
   })
 });
