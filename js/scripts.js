@@ -11,7 +11,7 @@ Pizza.prototype.pizzaCost = function () {
     return "Please select at least one option."
   }
   if (toppingsArray.length !== 0 && this.size === "small") {
-    return toppingsArray.length * 1 + pizzaBaseCost
+    return toppingsArray.length * 1 + pizzaBaseCost;
   }
   else if (toppingsArray.length !== 0 && this.size === "medium") {
     return toppingsArray.length * 2 + pizzaBaseCost + 2;
@@ -22,11 +22,9 @@ Pizza.prototype.pizzaCost = function () {
 };
 
 
-$(document).ready (function() {
+$(document).ready(function() {
   $("button#cost").click (function() {
-console.log("Document is ready");
     let size = $("input:radio[name=size]:checked").val();
-console.log(size);
     let inputtedToppingsArray = [];
     if ($("#cheese").is(":checked")) {
       inputtedToppingsArray.push("cheese");
@@ -62,9 +60,14 @@ console.log(size);
       inputtedToppingsArray.push("spinach");
     };
     let myPizza = new Pizza(inputtedToppingsArray, size);
-console.log(myPizza)
-    let pizzaCost = "Your cost is: $" + myPizza.pizzaCost(myPizza) + ".00";
-    $("#pizzaCost").html(pizzaCost);
-    $("#pizzaCost").show(pizzaCost);
-  })
+    let pizzaCost = myPizza.pizzaCost();
+    if (isNaN(parseInt(pizzaCost)) === true) {
+      $("#pizzaCost").html(pizzaCost);
+      $("#pizzaCost").show(pizzaCost);
+    }
+    else {
+      $("#pizzaCost").html("$" + pizzaCost + ".00");
+      $("#pizzaCost").show("$" + pizzaCost + ".00");
+    };
+  });
 });
